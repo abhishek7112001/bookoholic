@@ -1,10 +1,11 @@
 import React, { useState, useEffect} from 'react'
 import Login from './Login';
-
-
+import Logout from './Logout';
+import { useAuth } from '../context/AuthProvider';
 
 function Navbar() {
 
+    const [authUser,setAuthUser] =useAuth();
     const [theme, setTheme] = useState(localStorage.getItem("theme")?localStorage.getItem("theme"):"light")
 
     const element = document.documentElement;
@@ -81,6 +82,9 @@ function Navbar() {
                 <div className='hidden md:block'>
                 <input type="text" placeholder="Search" className="grow outline-none border px-3 py-2 rounded-md  max-w-xs" />
                 </div>
+
+                {
+                    authUser?<Logout />:
                 <div className="">
                     <a className="bg-black text-white px-3 py-2 rounded-md hover:bg-slate-800 
                             duration-300 cursor-pointer"
@@ -88,6 +92,8 @@ function Navbar() {
                                 Login</a>
                                 <Login />
                 </div>
+                }
+                
                 <div>
                     <label className="swap swap-rotate">
     

@@ -28,7 +28,7 @@ function Intro() {
             </div>
             <div className="mt-6">
                     <a className="bg-black text-white px-3 py-2 rounded-md hover:bg-slate-800 
-                            duration-300 cursor-pointer">add-on</a>
+                            duration-300 cursor-pointer">Get Started</a>
                 </div>
         </div>
     </div>
